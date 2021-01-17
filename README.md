@@ -92,8 +92,8 @@ ggplot(data = world) +
   theme(panel.background = element_rect(fill = "#e7d8c9"),
         plot.title =element_text(size = 18),
         panel.grid = element_blank(),
-	  legend.key = element_blank(),
-	  legend.title = element_blank(),
+	legend.key = element_blank(),
+	legend.title = element_blank(),
         axis.ticks = element_blank(),
         axis.text = element_blank(),
         axis.title = element_blank()) 
