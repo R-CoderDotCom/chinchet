@@ -1,5 +1,5 @@
 # chinchet
-A geom for adding pushpins to ggplot2
+This package provides `geom_pushpin`, a geom for adding pushpins to ggplot2
 
 
 # Installation
