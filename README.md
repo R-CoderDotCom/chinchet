@@ -85,7 +85,7 @@ ggplot(data = world) +
   geom_polygon(aes(x = long, y = lat, group = group), fill = "white", color = "grey30", size = 0.1) + 
   ggtitle("World Travel Map") +
   geom_pushpin(cities_visited, mapping =  aes(x = long, y = lat, colour = "red", pushpin = "red"), size = 0.75) +
-  geom_pushpin(cities_to_visit, mapping =  aes(x = long, y = lat, colour = "blue", pushpin = "blue"), size = 0.75) + 
+  geom_pushpin(cities_to_visit, mapping = aes(x = long, y = lat, colour = "blue", pushpin = "blue"), size = 0.75) + 
   geom_pushpin(current_location, mapping = aes(x = long, y = lat, colour = "green", pushpin = "green"), size = 0.75) +
   scale_color_manual(labels = c("Visited", "To visit", "Current location"), values = c("red", "blue", "green")) +
   coord_map(xlim = c(-180,180), ylim = c(-55, 180)) +
