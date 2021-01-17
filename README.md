@@ -79,19 +79,24 @@ head(world)
 set.seed(2)
 cities_visited <- world.cities[sample(1:nrow(world.cities), 20), ]
 cities_to_visit <- world.cities[sample(1:nrow(world.cities), 15), ]
+current_location <- world.cities[sample(1:nrow(world.cities), 1), ]
 
 ggplot(data = world) +
   geom_polygon(aes(x = long, y = lat, group = group), fill = "white", color = "grey30", size = 0.1) + 
+  ggtitle("World Travel Map") +
   geom_pushpin(cities_visited, mapping =  aes(x = long, y = lat, colour = "red", pushpin = "red"), size = 0.75) +
-  geom_pushpin(cities_to_visit, mapping =  aes(x = long, y = lat, colour = "green", pushpin = "green"), size = 0.75) + 
-  scale_color_manual(labels = c("Visited", "To visit"), values = c("red", "green")) +
-  coord_sf(crs = 4087) +
-  theme(panel.background = element_rect(fill = "#edd9af"),
-        panel.grid = element_blank()) 
+  geom_pushpin(cities_to_visit, mapping =  aes(x = long, y = lat, colour = "blue", pushpin = "blue"), size = 0.75) + 
+  geom_pushpin(current_location, mapping = aes(x = long, y = lat, colour = "green", pushpin = "green"), size = 0.75) +
+  scale_color_manual(labels = c("Visited", "To visit", "Current location"), values = c("red", "blue", "green")) +
+  coord_map(xlim = c(-180,180), ylim = c(-55, 180)) +
+  theme(panel.background = element_rect(fill = "#e7d8c9"),
+        plot.title =element_text(size = 18),
+        panel.grid = element_blank(),
+	  legend.key=element_blank()) 
 ```
 
 
 <p align="center">
- <img src="https://user-images.githubusercontent.com/67192157/104848385-020b9280-58e5-11eb-86e8-e5099f196011.png">
+ <img src="https://user-images.githubusercontent.com/67192157/104850213-08523c80-58ee-11eb-9e66-d91488000702.png">
 </p>
 
